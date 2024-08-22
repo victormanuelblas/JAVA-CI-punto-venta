@@ -1,22 +1,18 @@
 package proyecto;
 
 import java.awt.EventQueue;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JButton;
-import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 
-public class IfrmCuotaDiaria extends JInternalFrame {
+public class ifrmConfCantOptima extends JInternalFrame {
 
 	private static final long serialVersionUID = 1L;
-	public JTextField txtMonto;
-
+	public JTextField txtCantidad;
 	/**
 	 * Launch the application.
 	 */
@@ -24,7 +20,7 @@ public class IfrmCuotaDiaria extends JInternalFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					IfrmCuotaDiaria frame = new IfrmCuotaDiaria();
+					ifrmConfCantOptima frame = new ifrmConfCantOptima();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,30 +32,28 @@ public class IfrmCuotaDiaria extends JInternalFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IfrmCuotaDiaria() {
-		getContentPane().addComponentListener(new ComponentAdapter() {
-		});
-		setTitle("Configurar cuota diaria");
+	public ifrmConfCantOptima() {
 		setClosable(true);
-		setBounds(100, 100, 450, 169);
+		setTitle("Configurar cantidad óptima");
+		setBounds(100, 100, 500, 300);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Cuota diaria esperada (S/)");
-		lblNewLabel.setBounds(16, 28, 179, 16);
+		JLabel lblNewLabel = new JLabel("Cantidad óptima de unidades vendidas:");
+		lblNewLabel.setBounds(16, 28, 257, 16);
 		getContentPane().add(lblNewLabel);
 		
-		txtMonto = new JTextField();
-		txtMonto.setBounds(196, 23, 81, 26);
-		getContentPane().add(txtMonto);
-		txtMonto.setColumns(10);
+		txtCantidad = new JTextField();
+		txtCantidad.setBounds(272, 23, 55, 26);
+		getContentPane().add(txtCantidad);
+		txtCantidad.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				actualizarCuotaDiaria();
+				actualizarCantidadOptima();
 			}
 		});
-		btnAceptar.setBounds(303, 23, 117, 29);
+		btnAceptar.setBounds(339, 23, 117, 29);
 		getContentPane().add(btnAceptar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -68,14 +62,15 @@ public class IfrmCuotaDiaria extends JInternalFrame {
 				dispose();
 			}
 		});
-		btnCancelar.setBounds(303, 62, 117, 29);
+		btnCancelar.setBounds(339, 64, 117, 29);
 		getContentPane().add(btnCancelar);
+
 
 	}
 	
-	void actualizarCuotaDiaria () {
+	void actualizarCantidadOptima () {
 		frmPrincipal frmprin = new frmPrincipal();
-		frmprin.cuotaDiaria = Integer.parseInt(txtMonto.getText()); 
+		frmprin.cantidadOptima = Integer.parseInt(txtCantidad.getText()); 
 	}
 
 }
