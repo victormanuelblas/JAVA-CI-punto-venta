@@ -40,7 +40,7 @@ public class IfrmNosotros extends JInternalFrame {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 				
-		JLabel lblNewLabel = new JLabel("Tienda 1.0");
+		JLabel lblNewLabel = new JLabel("Tienda 1.0 LA COMERCIAL");
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		lblNewLabel.setBounds(163, 23, 83, 16);
 		getContentPane().add(lblNewLabel);
