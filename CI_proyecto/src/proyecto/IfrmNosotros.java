@@ -40,9 +40,9 @@ public class IfrmNosotros extends JInternalFrame {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 				
-		JLabel lblNewLabel = new JLabel("Tienda 1.0 LA COMERCIAL");
+		JLabel lblNewLabel = new JLabel("La Comercial S.A.");
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblNewLabel.setBounds(163, 23, 83, 16);
+		lblNewLabel.setBounds(142, 24, 138, 16);
 		getContentPane().add(lblNewLabel);
 		
 		JSeparator separator = new JSeparator();

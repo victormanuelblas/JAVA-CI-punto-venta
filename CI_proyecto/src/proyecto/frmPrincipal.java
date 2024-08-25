@@ -93,7 +93,7 @@ public class frmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public frmPrincipal() {
-		setTitle("LA COMERCIAL S.A.");
+		setTitle("La Comercial S.A.");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		
