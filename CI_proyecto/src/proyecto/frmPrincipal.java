@@ -72,7 +72,34 @@ public class frmPrincipal extends JFrame {
 	public static int cantidadOptima = 30;
 	// Cuota diaria
 	public static double cuotaDiaria = 75000;
-	
+	//ventas primera cocina
+	public static int cantidadVenta0 = 0;
+	public static int cantidadUnidadesVenta0 = 0;
+	public static double importeVentaTotal0 = 0.0;
+	public static double aporteCuotaDiaria0 = 0.0;
+	//ventas primera cocina1
+	public static int cantidadVenta1 = 0;
+	public static int cantidadUnidadesVenta1 = 0;
+	public static double importeVentaTotal1 = 0.0;
+	public static double aporteCuotaDiaria1 = 0.0;
+	//ventas primera cocina2
+	public static int cantidadVenta2 = 0;
+	public static int cantidadUnidadesVenta2 = 0;
+	public static double importeVentaTotal2 = 0.0;
+	public static double aporteCuotaDiaria2 = 0.0;
+	//ventas primera cocina3
+	public static int cantidadVenta3 = 0;
+	public static int cantidadUnidadesVenta3 = 0;
+	public static double importeVentaTotal3 = 0.0;
+	public static double aporteCuotaDiaria3 = 0.0;
+	//ventas primera cocina4
+	public static int cantidadVenta4 = 0;
+	public static int cantidadUnidadesVenta4 = 0;
+	public static double importeVentaTotal4 = 0.0;
+	public static double aporteCuotaDiaria4 = 0.0;
+	//ventas totales
+	public static int totalVentas = 0;
+	public static double totalImporteVentas = 0.0;
 	/**
 	 * Launch the application.
 	 */
@@ -80,6 +107,7 @@ public class frmPrincipal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
 					frmPrincipal frame = new frmPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -88,14 +116,16 @@ public class frmPrincipal extends JFrame {
 			}
 		});
 	}
-
+	 
 	/**
 	 * Create the frame.
 	 */
 	public frmPrincipal() {
 		setTitle("Grupo 02");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
+		setBounds(100, 100, 1200, 800);
+		
+		this.setLocationRelativeTo(null);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -131,7 +161,9 @@ public class frmPrincipal extends JFrame {
 				ifrm.txtFondo.setText("" + fondo0);
 				ifrm.txtQuemadores.setText("" + quemadores0);
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -155,7 +187,9 @@ public class frmPrincipal extends JFrame {
 				ifrm.txtFondo.setText("" + fondo0);
 				ifrm.txtQuemadores.setText("" + quemadores0);
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -168,7 +202,9 @@ public class frmPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ifrmListaCocinas ifrm = new ifrmListaCocinas();
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -179,9 +215,46 @@ public class frmPrincipal extends JFrame {
 		menuBar.add(mnVenta);
 		
 		JMenuItem mntmVentaVender = new JMenuItem("Vender");
+		mntmVentaVender.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ifrmVentaCocina ifrm = new ifrmVentaCocina();
+				
+				ifrm.cboModelo.addItem(modelo0);
+				ifrm.cboModelo.addItem(modelo1);
+				ifrm.cboModelo.addItem(modelo2);
+				ifrm.cboModelo.addItem(modelo3);
+				ifrm.cboModelo.addItem(modelo4);
+				
+				ifrm.txtPrecio.setText("" + precio0);
+				ifrm.txtCantidad.setText("0");
+				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
+				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
+				ifrm.toFront();
+				ifrm.show();
+
+			}
+		});
 		mnVenta.add(mntmVentaVender);
 		
 		JMenuItem mntmVentaReportes = new JMenuItem("Generar reportes");
+		mntmVentaReportes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ifrmVentaReportes ifrm = new ifrmVentaReportes();
+				
+				ifrm.cboTipoReporte.addItem("Ventas por modelo");
+				ifrm.cboTipoReporte.addItem("Ventas en relación a la venta óptima");
+				ifrm.cboTipoReporte.addItem("Precios en relación al precio promedio");
+				ifrm.cboTipoReporte.addItem("Promedios, menores y mayores");
+				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
+				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
+				ifrm.toFront();
+				ifrm.show();
+			}
+		});
 		mnVenta.add(mntmVentaReportes);
 		
 		JMenu mnConf = new JMenu("Configuración");
@@ -196,7 +269,9 @@ public class frmPrincipal extends JFrame {
 				ifrm.txtH15.setText("" + porcentaje3);
 				ifrm.txtM15.setText("" + porcentaje4);
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -211,7 +286,10 @@ public class frmPrincipal extends JFrame {
 				ifrm.txtH1.setText("" + obsequio1);
 				ifrm.txtH5.setText("" + obsequio2);
 				ifrm.txtM5.setText("" + obsequio3);
+				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -224,7 +302,9 @@ public class frmPrincipal extends JFrame {
 				ifrmConfCantOptima ifrm = new ifrmConfCantOptima();
 				ifrm.txtCantidad.setText("" + cantidadOptima);
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -237,7 +317,9 @@ public class frmPrincipal extends JFrame {
 				IfrmCuotaDiaria ifrm = new IfrmCuotaDiaria();
 				ifrm.txtMonto.setText("" + cuotaDiaria);
 				
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
 				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
 				ifrm.toFront();
 				ifrm.show();
 			}
@@ -250,11 +332,13 @@ public class frmPrincipal extends JFrame {
 		JMenuItem mntmAyudaAcerca = new JMenuItem("Acerca de la tienda");
 		mntmAyudaAcerca.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IfrmNosotros frmAbout = new IfrmNosotros();
+				IfrmNosotros ifrm = new IfrmNosotros();
 				
-				escritorio.add(frmAbout);
-				frmAbout.toFront();
-				frmAbout.show();
+				int pointX = escritorio.getWidth() / 2,pointY = escritorio.getHeight() / 2;
+				escritorio.add(ifrm);
+				ifrm.setLocation(pointX - ifrm.getWidth() / 2, pointY - ifrm.getHeight() / 2);
+				ifrm.toFront();
+				ifrm.show();
 				
 			}
 		});
@@ -272,5 +356,4 @@ public class frmPrincipal extends JFrame {
 
 	}
 	
-
 }

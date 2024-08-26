@@ -69,15 +69,7 @@ public class ifrmListaCocinas extends JInternalFrame {
 		scrollPane.setViewportView(listCocinas);
 		listCocinas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		listCocinas.setFont(new Font("Courier New", Font.PLAIN, 12));
-		listCocinas.setModel(new AbstractListModel() {
-			String[] values = new String[] {};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
+		
 
 	}
 	
