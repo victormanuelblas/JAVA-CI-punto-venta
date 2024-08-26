@@ -76,6 +76,12 @@ public class frmPrincipal extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	
+	public static double importeAcumulado0, importeAcumulado1, importeAcumulado2, importeAcumulado3, importeAcumulado4, importeAcumuladoTotal;
+	public static double porcentajeCuota0, porcentajeCuota1, porcentajeCuota2, porcentajeCuota3, porcentajeCuota4, porcentajeCuotaTotal;
+	public static int contadorVenta0, contadorVenta1, contadorVenta2, contadorVenta3, contadorVenta4, contadorVentaTotal;
+	public static int cantUniVendidas0, cantUniVendidas1, cantUniVendidas2, cantUniVendidas3, cantUniVendidas4;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -182,6 +188,16 @@ public class frmPrincipal extends JFrame {
 		mnVenta.add(mntmVentaVender);
 		
 		JMenuItem mntmVentaReportes = new JMenuItem("Generar reportes");
+		mntmVentaReportes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				actionPerformedMntmVentaReportes(e);
+				
+				ifrmVentasReportes ifrm = new ifrmVentasReportes();
+				escritorio.add(ifrm);
+				ifrm.toFront();
+				ifrm.show();
+			}
+		});
 		mnVenta.add(mntmVentaReportes);
 		
 		JMenu mnConf = new JMenu("Configuración");
@@ -273,4 +289,6 @@ public class frmPrincipal extends JFrame {
 	}
 	
 
+	protected void actionPerformedMntmVentaReportes(ActionEvent e) {
+	}
 }

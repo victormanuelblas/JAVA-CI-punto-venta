@@ -59,12 +59,12 @@ public class IfrmNosotros extends JInternalFrame {
 		lblNewLabel_2.setBounds(114, 111, 195, 16);
 		getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Espinoza Rodríguez, César Manuel");
+		JLabel lblNewLabel_3 = new JLabel("Escobar Tito, Samuel");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(88, 139, 248, 16);
 		getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Escobar Tito, Samuel");
+		JLabel lblNewLabel_4 = new JLabel("Espinoza Rodríguez, César Manuel");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(128, 170, 181, 16);
 		getContentPane().add(lblNewLabel_4);
