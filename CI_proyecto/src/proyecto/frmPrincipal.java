@@ -127,7 +127,7 @@ public class frmPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public frmPrincipal() {
-		setTitle("Grupo 02");
+		setTitle("La comercial S.A. - Sistemas de información");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1200, 800);
 		
