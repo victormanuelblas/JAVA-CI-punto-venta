@@ -100,6 +100,12 @@ public class frmPrincipal extends JFrame {
 	//ventas totales
 	public static int totalVentas = 0;
 	public static double totalImporteVentas = 0.0;
+	// Cesar espinoza
+	public static int contadorVenta0, contadorVenta1, contadorVenta2, contadorVenta3, contadorVenta4;
+	public static int cantUniVendidas0, cantUniVendidas1, cantUniVendidas2, cantUniVendidas3, cantUniVendidas4;
+	public static double importeAcumulado0, importeAcumulado1, importeAcumulado2, importeAcumulado3,importeAcumulado4;
+	public static double porcentajeCuota0, porcentajeCuota1, porcentajeCuota2, porcentajeCuota3, porcentajeCuota4;
+
 	/**
 	 * Launch the application.
 	 */

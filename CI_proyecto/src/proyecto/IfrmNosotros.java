@@ -40,9 +40,9 @@ public class IfrmNosotros extends JInternalFrame {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
 				
-		JLabel lblNewLabel = new JLabel("Tienda 1.0");
+		JLabel lblNewLabel = new JLabel("La Comercial S.A.");
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblNewLabel.setBounds(163, 23, 83, 16);
+		lblNewLabel.setBounds(142, 24, 138, 16);
 		getContentPane().add(lblNewLabel);
 		
 		JSeparator separator = new JSeparator();
@@ -59,12 +59,12 @@ public class IfrmNosotros extends JInternalFrame {
 		lblNewLabel_2.setBounds(114, 111, 195, 16);
 		getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Espinoza Rodríguez, César Manuel");
+		JLabel lblNewLabel_3 = new JLabel("Escobar Tito, Samuel");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(88, 139, 248, 16);
 		getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Escobar Tito, Samuel");
+		JLabel lblNewLabel_4 = new JLabel("Espinoza Rodríguez, César Manuel");
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(128, 170, 181, 16);
 		getContentPane().add(lblNewLabel_4);
